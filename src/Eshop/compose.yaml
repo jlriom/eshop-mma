@@ -1,0 +1,7 @@
+﻿services:
+  eshop.api:
+    image: eshop.api
+    build:
+      context: .
+      dockerfile: Api/Eshop.Api/Dockerfile
+

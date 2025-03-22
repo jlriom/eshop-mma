@@ -1,7 +1,19 @@
 ﻿services:
-  eshop.api:
-    image: eshop.api
-    build:
-      context: .
-      dockerfile: Api/Eshop.Api/Dockerfile
+
+  eshopdb:
+    image: postgres
+  
+  pgadmin:
+    image: dpage/pgadmin4
+
+
+volumes:
+  postgres_eshopdb:  
+
+
+  # eshop.api:
+  #   image: eshop.api
+  #   build:
+  #     context: .
+  #     dockerfile: Api/Eshop.Api/Dockerfile
 

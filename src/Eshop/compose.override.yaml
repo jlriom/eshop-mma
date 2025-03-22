@@ -1,5 +1,30 @@
 
-#services:
+services:
+  eshopdb:
+    container_name: eshopdb
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=EShopDb
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_eshopdb:/var/lib/postgresql/data/
+      
+
+  pgadmin:
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "postgres@jl.org"
+      PGADMIN_DEFAULT_PASSWORD: "postgres"
+    ports:
+      - 8999:80
+      - 4999:443
+    depends_on:
+      - eshopdb
+
+
 
 #  eshop.api:
 #    environment:
